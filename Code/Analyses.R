@@ -28,6 +28,11 @@ plot2_df <- fishdive %>%
   group_by(Diver, Year) %>%
   summarize(Nfish = n())
 
+##### Species by site across time
+plot3_df <- fishdive %>%
+  group_by(Year, Species, Site) %>%
+  summarize(Nfish = n())
+
 #################### Plots: ####################
 
 ##### Plot 1: line plot of number of fish in each species at all sites across time
@@ -44,6 +49,14 @@ plot2 <- ggplot(data = plot2_df, aes(x=Year, y=Nfish, color=Diver)) +
   ylab("Total fish caught") +
   theme_bw()
 
+##### Plot 3: species by site over time
+plot3 <- ggplot(data = plot3_df, aes(x=Year, y=Nfish, color=Species)) +
+  geom_point() +
+  geom_line() +
+  ylab("Total fish caught") +
+  facet_wrap(~Site) +
+  theme_bw()
+
 #################### Saving output: ####################
 
 # Plot 1 
@@ -55,4 +68,10 @@ dev.off()
 pdf(file=here::here("Plots","fish_by_diver.pdf"))
 plot2
 dev.off()
+
+# # Plot 3
+# pdf(file=here::here("Plots","fish_by_diver.pdf"))
+# plot3
+# dev.off()
+
 
