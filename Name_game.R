@@ -1,6 +1,6 @@
 # Name game
 
-# Louw
+# Louw seahorse
 
 # Emily
 
@@ -10,6 +10,6 @@
 
 # Shirley
 
-# Christina
+# Christina - mantas feeding
 
 # Lincy - Turtles are cool
