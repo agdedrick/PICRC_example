@@ -1,6 +1,6 @@
 # Name game
 
-# Louw
+# Louw seahorse
 
 # Emily
 
